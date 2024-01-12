@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\management\Application\bin\Debug\net5.0\Application.deps.json
+C:\Users\User\source\repos\management\Application\bin\Debug\net5.0\Application.dll
+C:\Users\User\source\repos\management\Application\bin\Debug\net5.0\ref\Application.dll
+C:\Users\User\source\repos\management\Application\bin\Debug\net5.0\Application.pdb
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.AssemblyInfo.cs
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.dll
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\ref\Application.dll
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.pdb
+C:\Users\User\source\repos\management\Application\obj\Debug\net5.0\Application.csproj.AssemblyReference.cache

@@ -1,0 +1,17 @@
+﻿using Microsoft.AspNetCore.Builder;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebApi
+{
+    public static class CNStartupExtensions
+    {
+       /*public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
+        {
+            //builder.Services.
+            //builder.Services.add
+        }*/
+    }
+}
