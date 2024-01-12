@@ -29,18 +29,22 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] GetUsuarioAutenticadoQuery loginRequest)
+        public async Task<ActionResult<int>> Post([FromBody] LoginRequest loginRequest)
         {
             //your logic for login process
             //If login usrename and password are correct then proceed to generate token
 
-            var usuario = Mediator.Send(loginRequest);
+            GetUsuarioAutenticadoQuery request = new GetUsuarioAutenticadoQuery();
+
+            request.usuario = loginRequest.UserName;
+            request.clave = loginRequest.Password;
+
+            var usuario = await Mediator.Send(request);
 
             if (usuario == null)
                 return BadRequest("no existe en la base de datos");
 
-            if (usuario.Result == null)
-                return BadRequest("no existe en la base de datos");
+            
 
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

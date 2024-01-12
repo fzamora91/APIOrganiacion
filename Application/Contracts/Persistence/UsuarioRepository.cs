@@ -49,13 +49,22 @@ namespace Application.Contracts.Persistence
 
         public async Task<Usuario> GetUsuarioAutenticado(string usuario, string password)
         {
-            var usuarioEncontrado = await _tenantUsuarioDbContext.Set<Usuario>().SingleOrDefaultAsync(x => x.Nombre == usuario);
-
-            // Verificar la contraseña si se encuentra el usuario
-            if (usuarioEncontrado != null && VerificarContraseña(password, usuarioEncontrado.clave))
+            try
             {
-                return usuarioEncontrado;
+                var usuarioEncontrado =  _tenantUsuarioDbContext.Set<Usuario>().Where(x => x.Nombre == usuario).FirstOrDefault();
+
+                // Verificar la contraseña si se encuentra el usuario
+                if (usuarioEncontrado != null && password == usuarioEncontrado.clave)
+                {
+                    return usuarioEncontrado;
+                }
+
             }
+            catch(Exception exp)
+            {
+
+            }
+            
 
             // Retorna null si el usuario no se encuentra o la contraseña no coincide
             return null;
