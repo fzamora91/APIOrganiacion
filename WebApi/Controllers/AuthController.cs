@@ -11,7 +11,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApi.Modelos;
+using WebApi.Dto;
+
 
 namespace WebApi.Controllers
 {

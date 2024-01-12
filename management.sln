@@ -4,14 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2DECA801-7674-4A3E-86B9-CB52898CA5B4}"
+	ProjectSection(SolutionItems) = preProject
+		TenantOrganizacion_Usuarios.sql = TenantOrganizacion_Usuarios.sql
+		TenantOrganizacionProductos.sql = TenantOrganizacionProductos.sql
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{5595A80D-52E5-4755-9F91-CA22C44C7E50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{5595A80D-52E5-4755-9F91-CA22C44C7E50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{58ED5CBA-6F39-409A-9B6E-D8C8FD59FB86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{58ED5CBA-6F39-409A-9B6E-D8C8FD59FB86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{7A735595-1083-4962-8B1D-BE2E2891CD2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{7A735595-1083-4962-8B1D-BE2E2891CD2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{66F666D8-D7AF-491F-9165-92024D63FC65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{66F666D8-D7AF-491F-9165-92024D63FC65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
