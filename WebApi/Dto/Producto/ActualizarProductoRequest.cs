@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi.Dto
+namespace WebApi.Dto.Producto
 {
-    public class InsertarProductoRequest
+    public class ActualizarProductoRequest
     {
+        public int IdProducto { get; set; }
         public string Nombre_Producto { get; set; }
         public double Precio { get; set; }
         public DateTime? Fecha_Vencimiento { get; set; } = null;

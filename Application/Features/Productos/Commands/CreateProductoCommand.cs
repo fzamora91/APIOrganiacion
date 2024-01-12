@@ -11,11 +11,11 @@ namespace Application.Features.Productos.Commands
     {
         public string Nombre_Producto { get; set; }
         public double Precio { get; set; }
-        public DateTime Fecha_Vencimiento { get; set; }
+        public DateTime? Fecha_Vencimiento { get; set; } = null;
         public string Creado_Por { get; set; }
-        public DateTime Fecha_Creacion { get; set; }
+        public DateTime? Fecha_Creacion { get; set; } = null;
         public string Modificado_Por { get; set; }
-        public DateTime? Ultima_Modificacion { get; set; }
+        public DateTime? Ultima_Modificacion { get; set; } = null;
 
         public override string ToString()
         {

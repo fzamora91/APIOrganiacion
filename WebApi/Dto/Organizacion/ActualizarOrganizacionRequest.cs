@@ -1,13 +1,11 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.OrganizacionesUsuarios.Commands
+namespace WebApi.Dto.Organizacion
 {
-    public class UpdateOrganizacionCommand : IRequest<int>
+    public class ActualizarOrganizacionRequest
     {
         public int IdOrganizacion { get; set; }
         public string Nombre { get; set; }

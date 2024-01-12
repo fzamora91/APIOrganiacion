@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2DECA801-7674-4A3E-86B9-CB52898CA5B4}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\Users\User\Downloads\A-Prueba.postman_collection.json = ..\..\Users\User\Downloads\A-Prueba.postman_collection.json
 		TenantOrganizacion_Usuarios.sql = TenantOrganizacion_Usuarios.sql
 		TenantOrganizacionProductos.sql = TenantOrganizacionProductos.sql
 	EndProjectSection

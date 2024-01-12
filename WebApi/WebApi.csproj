@@ -6,10 +6,18 @@
 
   <ItemGroup>
     <None Remove="CNStartupExtensions.txt" />
+    <None Remove="OldTenant\ServiceCollectionExtensions.txt" />
+    <None Remove="OldTenant\Tenant00.txt" />
+    <None Remove="OldTenant\TenantResolutionMiddleware.txt" />
+    <None Remove="OldTenant\TenantStore.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="CNStartupExtensions.txt" />
+    <Compile Include="OldTenant\ServiceCollectionExtensions.txt" />
+    <Compile Include="OldTenant\Tenant00.txt" />
+    <Compile Include="OldTenant\TenantResolutionMiddleware.txt" />
+    <Compile Include="OldTenant\TenantStore.txt" />
   </ItemGroup>
 
   <ItemGroup>

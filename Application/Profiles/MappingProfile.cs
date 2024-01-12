@@ -4,6 +4,7 @@ using Application.Features.Productos.Queries;
 using Application.Features.Usuarios.Commands;
 using Application.Features.Usuarios.Queries;
 using Application.Features.Usuarios.Queries.GetUsuarioAutenticado;
+using Application.Features.Usuarios.Queries.GetUsuarioDetail;
 using AutoMapper;
 using Domain.Entities;
 using System;
@@ -27,9 +28,13 @@ namespace Application.Profiles
             CreateMap<Usuario, UsuarioAutenticadoVm>().ReverseMap();
 
 
-            CreateMap<Organizacion, Features.OrganizacionesUsuarios.Queries.OrganizacionDetailVM>().ReverseMap();
 
+
+            CreateMap<Organizacion, Features.OrganizacionesUsuarios.Queries.OrganizacionDetailVM>().ReverseMap();
             CreateMap<Organizacion, Features.OrganizacionesProductos.Queries.OrganizacionDetailVM>().ReverseMap();
+
+            CreateMap<Usuario, UsuarioDetailVM>().ReverseMap();
+            CreateMap<Producto, Features.Productos.Queries.GetProductoDetail.ProductoDetailVM>().ReverseMap();
 
 
             CreateMap<Organizacion, Features.OrganizacionesUsuarios.Commands.CreateOrganizacionCommand>().ReverseMap();
@@ -37,7 +42,26 @@ namespace Application.Profiles
 
             CreateMap<Usuario, CreateUsuariosCommand>().ReverseMap();
             CreateMap<Producto, CreateProductoCommand>().ReverseMap();
-            
+
+
+
+            CreateMap<Organizacion, Features.OrganizacionesUsuarios.Commands.UpdateOrganizacionCommand>().ReverseMap();
+            CreateMap<Organizacion, Features.OrganizacionesProductos.Commands.UpdateOrganizacionCommand>().ReverseMap();
+
+
+            CreateMap<Usuario, UpdateUsuariosCommand>().ReverseMap();
+            CreateMap<Producto, UpdateProductoCommand>().ReverseMap();
+
+
+            CreateMap<Organizacion, Features.OrganizacionesUsuarios.Commands.DeleteOrganizacionCommand>().ReverseMap();
+            CreateMap<Organizacion, Features.OrganizacionesProductos.Commands.DeleteOrganizacionCommand>().ReverseMap();
+
+            CreateMap<Usuario, DeleteUsuariosCommand>().ReverseMap();
+            CreateMap<Producto, DeleteProductoCommand>().ReverseMap();
+
+
+
+
             //CreateMap<AuthRequest,AuthCommand>().ReverseMap();
 
             //CreateMap<AuthResponseDTO, AuthCommand>().ReverseMap();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.OrganizacionesProductos.Commands
 {
-    public class UpdateOrganizacionCommand: IRequest
+    public class UpdateOrganizacionCommand: IRequest<int>
     {
         public int IdOrganizacion { get; set; }
         public string Nombre { get; set; }

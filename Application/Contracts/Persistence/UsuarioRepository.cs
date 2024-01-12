@@ -39,7 +39,8 @@ namespace Application.Contracts.Persistence
 
         public async Task<List<Usuario>> ListAll()
         {
-            return _tenantUsuarioDbContext.Set<Usuario>().ToList();
+            var list = _tenantUsuarioDbContext.Set<Usuario>().ToList();
+            return list;
         }
 
         public async Task<Usuario> GetByID(int id)

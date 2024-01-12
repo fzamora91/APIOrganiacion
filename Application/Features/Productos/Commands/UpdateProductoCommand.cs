@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Productos.Commands
 {
-    public class UpdateProductoCommand: IRequest
+    public class UpdateProductoCommand: IRequest<int>
     {
         public int IdProducto { get; set; }
         public string Nombre_Producto { get; set; }
