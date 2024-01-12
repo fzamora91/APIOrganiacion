@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Dto;
 
 namespace WebApi.Controllers
 {
@@ -20,8 +21,9 @@ namespace WebApi.Controllers
 
         //POST
         [HttpPost]
-        public async Task<ActionResult<int>> Create(CreateProductoCommand command)
+        public async Task<ActionResult<int>> Create([FromBody] InsertarProductoRequest dto)
         {
+            CreateProductoCommand command = new CreateProductoCommand();
             return await Mediator.Send(command);
         }
     }

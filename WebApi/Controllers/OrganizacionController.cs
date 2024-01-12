@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Controllers;
+using WebApi.Dto;
 
 namespace WebApi.Areas
 {
@@ -23,8 +24,10 @@ namespace WebApi.Areas
 
         //POST
         [HttpPost]
-        public async Task<ActionResult<int>> Create(CreateOrganizacionCommand command)
+        public async Task<ActionResult<int>> Create([FromBody] InsertarOrganizacionRequest dto)
         {
+            
+            CreateOrganizacionCommand command = new CreateOrganizacionCommand();
             return await Mediator.Send(command);
         }
     }

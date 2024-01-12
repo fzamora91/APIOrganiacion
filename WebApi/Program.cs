@@ -14,8 +14,20 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 using WebApi;
+using WebApi.Tenant;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddScoped<TenantService>();
+
+builder.Services.AddScoped<ITenantGetter, TenantService>();
+builder.Services.AddScoped<ITenantSetter, TenantService>();
+
+builder.Services.AddScoped<MultiTenantServiceMiddleware>();
+
+
+
 
 
 
@@ -45,7 +57,7 @@ builder.Services.AddScoped(typeof(IOrganizacionProductoRepository), typeof(Organ
 
 //builder.Services.AddScoped(typeof(IIdentityService), typeof(IdentityService));
 
-builder.Services.AddScoped(typeof(ITenantContext), typeof(TenantContext));
+//builder.Services.AddScoped(typeof(ITenantContext), typeof(TenantContext));
 
 builder.Services.AddApplicationServices();
 
@@ -92,6 +104,8 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
+
+app.UseMiddleware<WebApi.Tenant.MultiTenantServiceMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

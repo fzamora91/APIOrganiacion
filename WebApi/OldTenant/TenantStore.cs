@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApi
 {
-    public interface ITenantStore
+    /*public interface ITenantStore
     {
         Tenant GetTenant(string tenandId);
     }
@@ -21,5 +21,5 @@ namespace WebApi
                 _ => null
             };
         }
-    }
+    }*/
 }

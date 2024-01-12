@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebApi
 {
-    public class TenantResolutionMiddleware
+    /*public class TenantResolutionMiddleware
     {
         private readonly RequestDelegate _next;
 
@@ -48,5 +48,5 @@ namespace WebApi
 
             return (null, null);
         }
-    }
+    }*/
 }

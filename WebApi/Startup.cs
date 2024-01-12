@@ -32,9 +32,9 @@ namespace WebApi
         {
             services.AddHttpContextAccessor();
 
-            services.AddMultitenancy();
+            /*services.AddMultitenancy();
 
-            services.AddMultitenantAuthentication();
+            services.AddMultitenantAuthentication();*/
 
 
             //services.AddIdentity<IdentityUser, IdentityRole>();
@@ -67,7 +67,7 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseMiddleware<TenantResolutionMiddleware>();
+            //app.UseMiddleware<TenantResolutionMiddleware>();
 
             if (env.IsDevelopment())
             {

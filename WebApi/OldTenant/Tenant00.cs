@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApi
 {
-    public interface ITenantContext
+    /*public interface ITenantContext
     {
         Tenant CurrentTenant { get; }
     }
@@ -28,7 +28,7 @@ namespace WebApi
         {
             Name = name;
         }
-    }
+    }*/
 
     /*public class Tenant
     {

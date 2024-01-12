@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace WebApi
 {
-    public static class ServiceCollectionExtensions
+   /* public static class ServiceCollectionExtensions
     {
 
-        public static IServiceCollection AddMultitenancy(this IServiceCollection services)
+        /*public static IServiceCollection AddMultitenancy(this IServiceCollection services)
         {
             services.AddScoped<TenantContext>();
 
@@ -47,7 +47,7 @@ namespace WebApi
                 options.Cookie.Name = $"{tenant.Name}-Cookie";
             });*/
 
-            return services;
+           /* return services;
         }
 
        /* private static void AddPerRequestCookieOptions(
@@ -63,5 +63,5 @@ namespace WebApi
         }*/
 
 
-    }
+    //}
 }
