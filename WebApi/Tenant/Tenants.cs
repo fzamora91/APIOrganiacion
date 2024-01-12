@@ -34,4 +34,27 @@ namespace WebApi.Tenant
         void SetTenant(string tenant);
     }
 
+
+    public interface ITenantProvider
+    {
+        String GetCurrentTenant();
+    }
+
+
+    public class TenantProvider : ITenantProvider
+    {
+        private String currentTenant;
+
+        public String GetCurrentTenant()
+        {
+            return currentTenant;
+        }
+
+        public void SetCurrentTenant(String tenant)
+        {
+            currentTenant = tenant;
+        }
+    }
+
+
 }

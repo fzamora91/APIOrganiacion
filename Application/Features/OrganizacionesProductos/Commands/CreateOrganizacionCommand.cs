@@ -9,7 +9,7 @@ namespace Application.Features.OrganizacionesProductos.Commands
 {
     public class CreateOrganizacionCommand : IRequest<int>
     {
-        public int IdOrganizacion { get; set; }
+        //public int IdOrganizacion { get; set; }
         public string Nombre { get; set; }
         public string Pais { get; set; }
         public string Direccion { get; set; }

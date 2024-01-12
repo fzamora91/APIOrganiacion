@@ -103,6 +103,9 @@ namespace Infrastructure.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<int>("Idorganizacion")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -113,6 +116,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<bool>("activo")
                         .HasColumnType("bit");
+
+                    b.Property<string>("clave")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("email")
                         .HasMaxLength(45)

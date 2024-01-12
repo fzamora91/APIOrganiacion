@@ -2,6 +2,7 @@
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,15 +22,24 @@ namespace Application.Features.Usuarios.Commands
 
         public async Task<int> Handle(UpdateUsuariosCommand request, CancellationToken cancellationToken)
         {
+            var validator = new UpdateUsuariosCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+            if (validationResult.Errors.Count > 0) throw new Common.ValidationException(validationResult);
 
             var usuarioToUpdate = await _usuarioRepository.GetByID(request.IdUsuario);
+
+            if (usuarioToUpdate == null)
+            {
+                // La entidad no existe
+                throw new Exception($"No se encontró el usuario con ID {request.IdUsuario}");
+            }
 
             _mapper.Map(request, usuarioToUpdate, typeof(UpdateUsuariosCommand), typeof(Usuario));
 
 
             await _usuarioRepository.UpdateAsync(usuarioToUpdate);
 
-            return 0;
+            return 1;
 
         }
 

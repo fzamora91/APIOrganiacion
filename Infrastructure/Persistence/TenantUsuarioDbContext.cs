@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using System.Reflection;
 using System.Threading;
-using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
-using Infrastructure.Identity;
-using Microsoft.Extensions.Options;
-using Duende.IdentityServer.EntityFramework.Options;
-using MediatR;
+using System.Data.Entity.Migrations;
+using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
+using System.Linq;
 
 namespace Infrastructure.Persistence
 {
@@ -16,7 +16,7 @@ namespace Infrastructure.Persistence
        // private readonly IMediator _mediator;
         //private readonly AuditableEntitySaveChangesInterceptor _auditableEntitySaveChangesInterceptor;
 
-        public TenantUsuarioDbContext() 
+        public TenantUsuarioDbContext(DbContextOptions<TenantUsuarioDbContext> options) : base(options)
         {
             //_mediator = mediator;
             //_auditableEntitySaveChangesInterceptor = auditableEntitySaveChangesInterceptor;
@@ -52,6 +52,37 @@ namespace Infrastructure.Persistence
 
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-D5MIIT4;Initial Catalog=DB_Tecnan01; User Id = sa; Password = sa1403; Encrypt=False;TrustServerCertificate=False; Pooling= true; Connection Timeout=30;");
 
+        }
+
+        public void  actualizarMigracion()
+        {
+
+
+            using (var context = new TenantUsuarioDbContextFactory().CreateDbContext(null))
+            {
+                // Aplicar todas las migraciones pendientes
+                context.Database.Migrate();
+
+                var migrations = context.Database.GetPendingMigrations();
+                if (migrations.Any())
+                {
+                    var migrator = context.GetService<IMigrator>();
+                    migrator.Migrate();
+                }
+            }
+
+            /*var configuration = new DbMigrationsConfiguration
+            {
+                ContextType = typeof(TenantUsuarioDbContext),
+                MigrationsAssembly = Assembly.GetExecutingAssembly(),
+                TargetDatabase = new DbConnectionInfo("Data Source=DESKTOP-D5MIIT4;Initial Catalog=DB_Tecnan01; User Id = sa; Password = sa1403; Encrypt=False;TrustServerCertificate=False; Pooling= true; Connection Timeout=30;"),
+                MigrationsNamespace = "Infrastructure.Migrations.TenantUsuarioDb",
+                AutomaticMigrationDataLossAllowed = true
+            };
+
+            var migrator = new DbMigrator(configuration);
+
+            migrator.Update();*/
         }
 
     }

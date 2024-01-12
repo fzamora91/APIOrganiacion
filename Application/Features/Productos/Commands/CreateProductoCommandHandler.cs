@@ -25,6 +25,10 @@ namespace Application.Features.Productos.Commands
 
         public async Task<int> Handle(CreateProductoCommand request, CancellationToken cancellationToken)
         {
+            var validator = new CreateProductoCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+            if (validationResult.Errors.Count > 0) throw new Common.ValidationException(validationResult);
+
             var @producto = _mapper.Map<Producto>(request);
             @producto = await _productoRepository.AddAsync(@producto);
             return producto.IdProducto;

@@ -25,13 +25,24 @@ namespace Application.Features.OrganizacionesProductos.Commands
         public async Task<int> Handle(UpdateOrganizacionCommand request, CancellationToken cancellationToken)
         {
 
-            var organizacionToUpdate = await _organizacionProductoRepository.GetByID(request.IdOrganizacion);
+            var validator = new UpdateOrganizacionCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+            if (validationResult.Errors.Count > 0) throw new Common.ValidationException(validationResult);
+
+            var organizacionToUpdate = _organizacionProductoRepository.GetByID(request.IdOrganizacion);
+
+            if (organizacionToUpdate == null)
+            {
+                // La entidad no existe
+                throw new Exception($"No se encontró la organización con ID {request.IdOrganizacion}");
+            }
+
 
             _mapper.Map(request, organizacionToUpdate, typeof(UpdateOrganizacionCommand), typeof(Organizacion));
 
             await _organizacionProductoRepository.UpdateAsync(organizacionToUpdate);
 
-            return 0;
+            return 1;
 
         }
     }

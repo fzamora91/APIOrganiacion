@@ -15,6 +15,7 @@ namespace Application.Features.Usuarios.Commands
         public string email { get; set; }
         public bool activo { get; set; }
         public DateTime Ultima_sesion { get; set; }
+        public int Idorganizacion { get; set; }
 
         public override string ToString()
         {

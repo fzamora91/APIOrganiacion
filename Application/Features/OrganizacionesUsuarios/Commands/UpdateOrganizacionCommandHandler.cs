@@ -24,7 +24,19 @@ namespace Application.Features.OrganizacionesUsuarios.Commands
 
         public async Task<int> Handle(UpdateOrganizacionCommand request, CancellationToken cancellationToken)
         {
-            var organizacionToUpdate = await _organizacionUsuarioRepository.GetByID(request.IdOrganizacion);
+
+            var validator = new UpdateOrganizacionCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+            if (validationResult.Errors.Count > 0) throw new Common.ValidationException(validationResult);
+
+
+            var organizacionToUpdate =  _organizacionUsuarioRepository.GetByID(request.IdOrganizacion);
+
+            if (organizacionToUpdate == null)
+            {
+                // La entidad no existe, puedes lanzar una excepción adecuada
+                throw new Exception($"No se encontró la organización con ID {request.IdOrganizacion}");
+            }
 
             _mapper.Map(request, organizacionToUpdate, typeof(UpdateOrganizacionCommand), typeof(Organizacion));
 

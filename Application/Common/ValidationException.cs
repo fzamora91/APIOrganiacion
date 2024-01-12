@@ -1,4 +1,4 @@
-﻿//using FluentValidation.Results;
+﻿using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -15,7 +15,7 @@ namespace Application.Common
             Errors = new Dictionary<string, string[]>();
         }
 
-        public ValidationException(IEnumerable<ValidationFailure> failures)
+        public ValidationException(IEnumerable<FluentValidation.Results.ValidationFailure> failures)
             : this()
         {
             /*Errors = failures
@@ -28,6 +28,19 @@ namespace Application.Common
             Errors = errors
                 .GroupBy(e => e.Code, e => e.Description)
                 .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
+        }
+
+        public List<String> ValidationErrors { get; set; }
+
+        public ValidationException(ValidationResult result)
+        {
+            ValidationErrors = new List<string>();
+
+            foreach (var validationError in result.Errors)
+            {
+                ValidationErrors.Add(validationError.ErrorMessage);
+            }
+
         }
 
         public IDictionary<string, string[]> Errors { get; }

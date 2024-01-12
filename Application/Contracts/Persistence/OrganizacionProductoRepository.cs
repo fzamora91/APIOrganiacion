@@ -1,7 +1,10 @@
 ﻿using Domain.Entities;
+using Infrastructure.Migrations;
 using Infrastructure.Persistence;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,15 +22,25 @@ namespace Application.Contracts.Persistence
 
         public async Task<Organizacion> AddAsync(Organizacion entity)
         {
+
+           
+
+
             await _tenantProductDbContext.Set<Organizacion>().AddAsync(entity);
-            await _tenantProductDbContext.SaveChangesAsync();
+             _tenantProductDbContext.SaveChanges();
+
+            _tenantProductDbContext.actualizarMigracion();
             return entity;
         }
 
-        public async Task UpdateAsync(Organizacion entity)
+        public  Task UpdateAsync(Organizacion entity)
         {
             _tenantProductDbContext.Set<Organizacion>().Update(entity);
-            await _tenantProductDbContext.SaveChangesAsync();
+
+            var resultado =  _tenantProductDbContext.SaveChangesAsync();
+            return resultado;
+
+           // return _tenantProductDbContext.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(Organizacion entity)
@@ -42,9 +55,11 @@ namespace Application.Contracts.Persistence
             return _tenantProductDbContext.Set<Organizacion>().ToList();
         }
 
-        public async Task<Organizacion> GetByID(int id)
+        public Organizacion GetByID(int id)
         {
-            return await _tenantProductDbContext.Set<Organizacion>().FindAsync(id);
+            var organizacion = _tenantProductDbContext.Set<Organizacion>().Find(id);
+
+            return organizacion;
         }
 
 

@@ -12,6 +12,7 @@ namespace WebApi.Dto
         public string telefono { get; set; }
         public string email { get; set; }
         public bool activo { get; set; }
+        public int Idorganizacion { get; set; }
         public DateTime Ultima_sesion { get; set; } = DateTime.Now;
     }
 }

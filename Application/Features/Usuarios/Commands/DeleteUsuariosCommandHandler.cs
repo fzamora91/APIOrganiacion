@@ -23,10 +23,21 @@ namespace Application.Features.Usuarios.Commands
 
         public async Task<int> Handle(DeleteUsuariosCommand request, CancellationToken cancellationToken)
         {
+            var validator = new DeleteUsuariosCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+            if (validationResult.Errors.Count > 0) throw new Common.ValidationException(validationResult);
+
             var usuarioToDelete = await _usuarioRepository.GetByID(request.IdUsuario);
+
+            if (usuarioToDelete == null)
+            {
+                // La entidad no existe
+                throw new Exception($"No se encontró el usuario con ID {request.IdUsuario}");
+            }
+
             await _usuarioRepository.DeleteAsync(usuarioToDelete);
 
-            return 0;
+            return 1;
         }
     }
 }

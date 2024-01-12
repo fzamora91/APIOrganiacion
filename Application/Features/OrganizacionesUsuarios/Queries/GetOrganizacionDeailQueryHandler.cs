@@ -23,7 +23,7 @@ namespace Application.Features.OrganizacionesUsuarios.Queries
 
         public async Task<OrganizacionDetailVM> Handle(GetOrganizacionDeailQuery request, CancellationToken cancellationToken)
         {
-            var organizacion = await _organizacionRepository.GetByID(request.id);
+            var organizacion = _organizacionRepository.GetByID(request.id);
 
             var organizacionDetail = _mapper.Map<OrganizacionDetailVM>(organizacion);
 

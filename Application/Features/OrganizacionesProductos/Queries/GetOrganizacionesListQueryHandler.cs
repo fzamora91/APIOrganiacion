@@ -22,9 +22,12 @@ namespace Application.Features.OrganizacionesProductos.Queries
             _organizacionRepository = organizacionRepository;
         }
 
-        public Task<List<OrganizacionesListVM>> Handle(GetOrganizacionesListQuery request, CancellationToken cancellationToken)
+        public async Task<List<OrganizacionesListVM>> Handle(GetOrganizacionesListQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var allOrganizaciones = (await _organizacionRepository.ListAll()).OrderBy(x => x.IdOrganizacion);
+
+
+            return _mapper.Map<List<OrganizacionesListVM>>(allOrganizaciones);
         }
     }
 }

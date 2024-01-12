@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9dKsDmv2Xs6PDNLFq8Q8ldL10zk43hj4V3fV/R8QCRpPUz7/rWQrG9QpGKcLAMIlG3eiMQOUmcH/VjEF1sccHA==",
+  "dgSpecHash": "k1s5QwwFawr49UzuMPVzCCbSxLI0OGnXcFPzi+jwNI0pTzPBLNxOr9CAwSKJm+h8N+EbNDLCWv1btC5W6vmp7Q==",
   "success": true,
   "projectFilePath": "C:\\Organizaciones\\management\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,8 @@
     "C:\\Users\\User\\.nuget\\packages\\duende.identityserver.entityframework.storage\\5.2.0\\duende.identityserver.entityframework.storage.5.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\duende.identityserver.storage\\5.2.0\\duende.identityserver.storage.5.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\identitymodel\\5.1.0\\identitymodel.5.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

@@ -10,6 +10,6 @@ namespace Application.Contracts.Persistence
     public interface IOrganizacionProductoRepository : IBaseRepository<Organizacion>
     {
         Task<List<Organizacion>> ListAll();
-        Task<Organizacion> GetByID(int id);
+        Organizacion GetByID(int id);
     }
 }

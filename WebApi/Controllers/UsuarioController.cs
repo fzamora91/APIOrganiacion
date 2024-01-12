@@ -9,16 +9,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Dto;
 using WebApi.Dto.Usuario;
+using WebApi.Tenant;
 
 namespace WebApi.Controllers
 {
     [Authorize]
     public class UsuarioController : ApiControllerBase
     {
+        
+        
+
+        public UsuarioController()
+        {
+            
+        }
 
         [HttpGet]
         public async Task<List<UsuariosListVM>> Get()
         {
+            
+
             return await Mediator.Send(new GetUsuariosListQuery());
         }
 

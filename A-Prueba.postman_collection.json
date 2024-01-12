@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "4909270b-c1ab-4734-b93e-48a25b557f7f",
+		"name": "A-Prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3445952"
+	},
+	"item": [
+		{
+			"name": "ListarProductos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzE2MzgsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.7CrhHTNSqbyaGqSD6UEe_R2t6gFxcO_NsqLJ5vYymMg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/Producto/Get?tenant=OrganizacionUsuario",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Producto",
+						"Get"
+					],
+					"query": [
+						{
+							"key": "tenant",
+							"value": "OrganizacionUsuario"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarUsuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzE2MzgsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.7CrhHTNSqbyaGqSD6UEe_R2t6gFxcO_NsqLJ5vYymMg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/Usuario/Get",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Usuario",
+						"Get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarOrgUsuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzk3MDgsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.EGIJ5G79EIPNex9TgzbeFuoADrk-xYyB0XIU6ctbWu4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/Organizacion/GetOrgUsuarios",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Organizacion",
+						"GetOrgUsuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarOrgProductos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzE2MzgsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.7CrhHTNSqbyaGqSD6UEe_R2t6gFxcO_NsqLJ5vYymMg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44352/api/Organizacion/GetOrganizacionesProductos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Organizacion",
+						"GetOrganizacionesProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzc3MTAsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.BmLf4GkFcY167X8fHOwbtNbUUiRMXNoMYx-noB6JF9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre_Producto\": \"Mouse\",\r\n  \"precio\": 25,\r\n  \"creado_Por\": \"Admin\",\r\n  \"modificado_Por\": \"Admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Producto/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Producto",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzc3MTAsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.BmLf4GkFcY167X8fHOwbtNbUUiRMXNoMYx-noB6JF9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"IdProducto\":1,\r\n  \"nombre_Producto\": \"Mouse usb 2.0\",\r\n  \"precio\": 25,\r\n  \"creado_Por\": \"Admin\",\r\n  \"modificado_Por\": \"Admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Producto/Update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Producto",
+						"Update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzc3MTAsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.BmLf4GkFcY167X8fHOwbtNbUUiRMXNoMYx-noB6JF9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n   \"nombre\": \"Mario\",\r\n  \"apellido\": \"Lopez\",\r\n  \"telefono\": \"85064578\",\r\n  \"email\": \"bp@gmail.com\",\r\n  \"activo\": true\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Usuario/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Usuario",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzc3MTAsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.BmLf4GkFcY167X8fHOwbtNbUUiRMXNoMYx-noB6JF9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n  \"idUsuario\":5,\r\n  \"nombre\": \"Mario\",\r\n  \"apellido\": \"Perez\",\r\n  \"telefono\": \"85064578\",\r\n  \"email\": \"bp@gmail.com\",\r\n  \"activo\": true\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Usuario/Update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Usuario",
+						"Update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Organizacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzc3MTAsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.BmLf4GkFcY167X8fHOwbtNbUUiRMXNoMYx-noB6JF9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"UHJSK\",\r\n  \"pais\": \"Noruega\",\r\n  \"direccion\": \"Principal street\",\r\n  \"sitioWeb\": \"www.uhjsk.com\",\r\n  \"telefono\": \"45789523\",\r\n  \"email\": \"uhjsk@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Organizacion/CreateOrgUsuario",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Organizacion",
+						"CreateOrgUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Organizacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDUwMzc3MTAsImlzcyI6Imp3dCIsImF1ZCI6Imp3dCJ9.BmLf4GkFcY167X8fHOwbtNbUUiRMXNoMYx-noB6JF9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"IdOrganizacion\":3,\r\n  \"nombre\": \" KO Ujaka\",\r\n  \"pais\": \"Noruega\",\r\n  \"direccion\": \"Principal street\",\r\n  \"sitioWeb\": \"www.uhjsk.com\",\r\n  \"telefono\": \"45789523\",\r\n  \"email\": \"uhjsk@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Organizacion/UpdateOrgUsuario",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Organizacion",
+						"UpdateOrgUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"UserName\":\"andres\",\r\n  \"Password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44352/api/Auth",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44352",
+					"path": [
+						"api",
+						"Auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

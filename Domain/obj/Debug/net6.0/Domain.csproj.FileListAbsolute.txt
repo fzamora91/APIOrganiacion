@@ -13,7 +13,6 @@ C:\Organizaciones\management\Domain\bin\Debug\net6.0\Domain.deps.json
 C:\Organizaciones\management\Domain\bin\Debug\net6.0\Domain.dll
 C:\Organizaciones\management\Domain\bin\Debug\net6.0\ref\Domain.dll
 C:\Organizaciones\management\Domain\bin\Debug\net6.0\Domain.pdb
-C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
 C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
 C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
@@ -21,3 +20,4 @@ C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileIn
 C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.dll
 C:\Organizaciones\management\Domain\obj\Debug\net6.0\ref\Domain.dll
 C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Organizaciones\management\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache

@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Areas;
+using WebApi.Tenant;
 
 namespace WebApi
 {
@@ -32,6 +34,9 @@ namespace WebApi
         {
             services.AddHttpContextAccessor();
 
+            // Registra la implementación de ITenantProvider
+            //services.AddScoped<ITenantProvider, TenantProvider>();
+
             /*services.AddMultitenancy();
 
             services.AddMultitenantAuthentication();*/
@@ -40,9 +45,12 @@ namespace WebApi
             //services.AddIdentity<IdentityUser, IdentityRole>();
 
             // Configuración de ASP.NET Core Identity
-           /*services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<TenantUsuarioDbContext>()
-                .AddDefaultTokenProviders();*/
+            /*services.AddIdentity<ApplicationUser, IdentityRole>()
+                 .AddEntityFrameworkStores<TenantUsuarioDbContext>()
+                 .AddDefaultTokenProviders();*/
+
+
+            
 
             // Configuración de UserManager y SignInManager
             services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();

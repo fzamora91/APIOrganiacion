@@ -17,7 +17,7 @@ namespace Infrastructure
         {
             service.AddAuthentication(IdentityConstants.ApplicationScheme).AddIdentityCookies();
 
-            service.AddIdentityCore<ApplicationUser>().AddEntityFrameworkStores<TenantUsuarioDbContext>();
+            //service.AddIdentityCore<ApplicationUser>().AddEntityFrameworkStores<TenantUsuarioDbContext>();
                 /*
               .AddDefaultIdentity<ApplicationUser>()
               .AddRoles<IdentityRole>()

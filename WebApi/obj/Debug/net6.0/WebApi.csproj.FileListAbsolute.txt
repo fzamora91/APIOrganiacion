@@ -382,3 +382,5 @@ C:\Organizaciones\management\WebApi\obj\Debug\net6.0\WebApi.dll
 C:\Organizaciones\management\WebApi\obj\Debug\net6.0\ref\WebApi.dll
 C:\Organizaciones\management\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Organizaciones\management\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
+C:\Organizaciones\management\WebApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Organizaciones\management\WebApi\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

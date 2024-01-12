@@ -22,6 +22,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\TenantUsuarioDb\" />
+  </ItemGroup>
+
 
 
 </Project>

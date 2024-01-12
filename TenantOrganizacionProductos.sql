@@ -1,21 +1,25 @@
 ﻿USE [DB_Tecnan02]
 GO
-/****** Object:  Table [dbo].[Organizacion]    Script Date: 11/1/2024 22:23:16 ******/
+/****** Object:  Table [dbo].[Organizacion]    Script Date: 12/1/2024 09:49:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Organizacion](
-	[IdOrganizacion] [nchar](10) NULL,
-	[Nombre] [nchar](10) NULL,
-	[Pais] [nchar](10) NULL,
-	[Direccion] [nchar](10) NULL,
-	[SitioWeb] [nchar](10) NULL,
-	[telefono] [nchar](10) NULL,
-	[email] [nchar](10) NULL
+	[IdOrganizacion] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [nvarchar](50) NULL,
+	[Pais] [nvarchar](50) NULL,
+	[Direccion] [nvarchar](50) NULL,
+	[SitioWeb] [nvarchar](50) NULL,
+	[telefono] [nvarchar](50) NULL,
+	[email] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Organizacion] PRIMARY KEY CLUSTERED 
+(
+	[IdOrganizacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Producto]    Script Date: 11/1/2024 22:23:16 ******/
+/****** Object:  Table [dbo].[Producto]    Script Date: 12/1/2024 09:49:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31,3 +35,4 @@ CREATE TABLE [dbo].[Producto](
 	[Ultima_Modificacion] [date] NULL
 ) ON [PRIMARY]
 GO
+

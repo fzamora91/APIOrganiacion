@@ -9,15 +9,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Dto;
 using WebApi.Dto.Producto;
+using WebApi.Tenant;
 
 namespace WebApi.Controllers
 {
     [Authorize]
     public class ProductoController : ApiControllerBase
     {
+        
+
+        public ProductoController()
+        {
+            
+        }
+
         [HttpGet]
         public async Task<List<ProductosListVM>> Get()
         {
+            
             return await Mediator.Send(new GetProductosListQuery());
         }
 
